@@ -1,12 +1,15 @@
 # Microservicio de Bienvenida con Spring Boot
 Este proyecto es un microservicio **REST** desarrollado con **Spring Boot**, que expone un endpoint para saludar a los usuarios.
+
 ## Características:
+
 - Implementado en **Spring Boot 3.5.0.**
 - Uso de **Spring Web** para la gestión de peticiones HTTP.
 - Servidor embebido **Tomcat**.
 - Retorno de respuestas en **JSON** o **texto plano**.
 
-## Estructura del proyecto 
+## Estructura del proyecto
+
 El proyecto se organiza en directorios principales:
 
 La carpeta `src/main/java/com/boot/ejemplo/` contiene las clases `BienvenidaController.java` y `MicroservicioEjemploApplication.java`.
@@ -23,16 +26,22 @@ Método `GET` en `/bienvenida`, que devuelve un mensaje de bienvenida.
 ```
 curl -X GET http://localhost:8080/bienvenida
 ```
+
+## Requisitos previos
+
+Se requiere Java 17 y Maven instalado para ejecutar el proyecto.
+
 ## Configuración y ejecución
 
 1. Clonar el repositorio desde GitHub.
 ```
+git clone https://github.com/PublioElio/microservicio_ejemplo.git
 ```
 2. Entrar al directorio del proyecto.
 
 3. Compilar y ejecutar
 ```
-mvn spring-boot:run.
+mvn spring-boot:run
 ```
 ## Dependencias
 El proyecto usa `Spring Boot Starter Web` para manejar peticiones HTTP.
