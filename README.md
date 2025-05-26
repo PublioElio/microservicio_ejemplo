@@ -13,26 +13,30 @@ La carpeta `src/main/java/com/boot/ejemplo/` contiene las clases `BienvenidaCont
 
 El archivo `application.properties` dentro de `src/main/resources/` configura el servidor.
 
-El archivo pom.xml contiene las dependencias necesarias.
+El archivo `pom.xml` contiene las dependencias necesarias.
 
-Endpoints:
+## Endpoints
 
-Método GET en /bienvenida, que devuelve un mensaje de bienvenida.
+Método `GET` en `/bienvenida`, que devuelve un mensaje de bienvenida.
 
-Ejemplo de solicitud con cURL:
-
-bash
+### Ejemplo de solicitud con cURL
+```
 curl -X GET http://localhost:8080/bienvenida
-Configuración y ejecución:
+```
+## Configuración y ejecución
 
-Clonar el repositorio desde GitHub.
+1. Clonar el repositorio desde GitHub.
+```
+```
+2. Entrar al directorio del proyecto.
 
-Entrar al directorio del proyecto.
+3. Compilar y ejecutar
+```
+mvn spring-boot:run.
+```
+## Dependencias
+El proyecto usa `Spring Boot Starter Web` para manejar peticiones HTTP.
 
-Compilar y ejecutar con mvn spring-boot:run.
-
-Dependencias: El proyecto usa Spring Boot Starter Web para manejar peticiones HTTP.
-
-Notas: Si el puerto 8080 está ocupado, se puede cambiar en el archivo application.properties agregando server.port=9090.
+>Notas: Si el puerto 8080 está ocupado, se puede cambiar en el archivo `application.properties` agregando `server.port=9090`.
 
 Licencia: Este proyecto es de código abierto bajo la licencia MIT.
