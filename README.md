@@ -53,7 +53,7 @@ curl -X GET http://localhost:4000/welcome/Bruce
 #### Ejemplo de respuesta:
 
 ```
-Welcome to my Spring Boot service, Adriano!
+Welcome to my Spring Boot service, Bruce!
 ```
 
 ## Requisitos previos
