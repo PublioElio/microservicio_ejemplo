@@ -6,29 +6,34 @@ Este proyecto es un microservicio **REST** desarrollado con **Spring Boot**, que
 - Implementado en **Spring Boot 3.5.0.**
 - Uso de **Spring Web** para la gestión de peticiones HTTP.
 - Servidor embebido **Tomcat**.
-- Retorno de respuestas en JSON mediante DTO.
+- Retorno de respuestas en **JSON** y **texto plano** según el endpoint.
+- Configuración personalizable mediante `application.properties`.
 
-## Estructura del proyecto
+## 🏗️ Estructura del proyecto
 
 El proyecto se organiza en directorios principales:
 
-La carpeta `src/main/java/com/boot/example/` contiene las clases:
-- `WelcomeControler.java` (controlador REST).
-- `ExampleMicroserviceApplication.java` (punto de entrada).
-- `WelcomeDTO.java` (transferencia de datos).
+📂 `src/main/java/com/boot/example/`  
+- `WelcomeController.java` → Controlador REST con varios métodos de bienvenida.  
+- `ExampleMicroserviceApplication.java` → Punto de entrada de la aplicación.  
+- `WelcomeDTO.java` → Clase DTO para las respuestas en JSON. 
 
-El archivo `application.properties` dentro de `src/main/resources/` configura el servidor.
+📂 `src/main/resources/`  
+- `application.properties` → Configuración del servicio.  
+- `pom.xml` → Dependencias necesarias. 
 
-El archivo `pom.xml` contiene las dependencias necesarias.
+📌 Importante: El servicio se ejecutará en el puerto 4000 y tendrá como contexto /myservice.
 
 ## Endpoints
 
-`GET /welcome`: Devuelve un objeto WelcomeDTO con un mensaje en formato JSON.
+### 1️⃣ Mensaje de bienvenida estándar (GET /welcome)
 
-### Ejemplo de solicitud con cURL
+`GET /myservice/welcome`: Devuelve un objeto WelcomeDTO con un mensaje en formato JSON.
+
+#### Ejemplo de solicitud con cURL
 
 ```
-curl -X GET http://localhost:4000/welcome
+curl -X GET http://localhost:4000/myservice/welcome
 ```
 
 #### Respuesta esperada
@@ -39,7 +44,7 @@ curl -X GET http://localhost:4000/welcome
 }
 ```
 
-### Obtener mensaje de bienvenida personalizado
+### 2️⃣ Mensaje de bienvenida personalizado (GET /welcome/{name})
 
 - Método: GET
 - URL: /welcome/{name}
@@ -47,13 +52,33 @@ curl -X GET http://localhost:4000/welcome
 #### Ejemplo de llamada:
 
 ```
-curl -X GET http://localhost:4000/welcome/Bruce
+curl -X GET http://localhost:4000/myservice/welcome/Bruce
 ```
 
 #### Ejemplo de respuesta:
 
 ```
 Welcome to my Spring Boot service, Bruce!
+```
+### 3️⃣ Mensaje de bienvenida con nombre y edad (GET /customgreeting)
+
+- Método: GET
+- URL: /myservice/customgreeting?name={name}&age={age}
+
+#### Ejemplo de llamada:
+
+```
+curl -X GET "http://localhost:4000/myservice/customgreeting?name=Adriano&age=30"
+```
+
+#### Ejemplo de respuesta:
+
+```
+Welcome, Adriano you are 30 years old.
+```
+>Si no se pasan parámetros, el servicio usa valores por defecto (name=Guest, age=42):
+```
+curl -X GET http://localhost:4000/myservice/customgreeting
 ```
 
 ## Requisitos previos
