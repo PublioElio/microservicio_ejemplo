@@ -39,6 +39,23 @@ curl -X GET http://localhost:4000/welcome
 }
 ```
 
+### Obtener mensaje de bienvenida personalizado
+
+- Método: GET
+- URL: /welcome/{name}
+
+#### Ejemplo de llamada:
+
+```
+curl -X GET http://localhost:4000/welcome/Bruce
+```
+
+#### Ejemplo de respuesta:
+
+```
+Welcome to my Spring Boot service, Adriano!
+```
+
 ## Requisitos previos
 
 Se requiere Java 17 y Maven instalado para ejecutar el proyecto.
