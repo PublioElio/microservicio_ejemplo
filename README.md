@@ -12,7 +12,7 @@ Este proyecto es un microservicio **REST** desarrollado con **Spring Boot**, que
 
 El proyecto se organiza en directorios principales:
 
-La carpeta `src/main/java/com/boot/ejemplo/` contiene las clases:
+La carpeta `src/main/java/com/boot/example/` contiene las clases:
 - `BienvenidaController.java` (controlador REST).
 - `MicroservicioEjemploApplication.java` (punto de entrada).
 - `BienvenidaDTO.java` (transferencia de datos).
