@@ -1,4 +1,4 @@
-package com.boot.ejemplo;
+package com.boot.example;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
