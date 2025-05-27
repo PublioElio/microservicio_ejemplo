@@ -13,9 +13,9 @@ Este proyecto es un microservicio **REST** desarrollado con **Spring Boot**, que
 El proyecto se organiza en directorios principales:
 
 La carpeta `src/main/java/com/boot/example/` contiene las clases:
-- `BienvenidaController.java` (controlador REST).
-- `MicroservicioEjemploApplication.java` (punto de entrada).
-- `BienvenidaDTO.java` (transferencia de datos).
+- `WelcomeControler.java` (controlador REST).
+- `ExampleMicroserviceApplication.java` (punto de entrada).
+- `WelcomeDTO.java` (transferencia de datos).
 
 El archivo `application.properties` dentro de `src/main/resources/` configura el servidor.
 
@@ -23,19 +23,19 @@ El archivo `pom.xml` contiene las dependencias necesarias.
 
 ## Endpoints
 
-`GET /bienvenida`: Devuelve un objeto BienvenidaDTO con un mensaje en formato JSON.
+`GET /welcome`: Devuelve un objeto WelcomeDTO con un mensaje en formato JSON.
 
 ### Ejemplo de solicitud con cURL
 
 ```
-curl -X GET http://localhost:8080/bienvenida
+curl -X GET http://localhost:4000/welcome
 ```
 
 #### Respuesta esperada
 
 ```
 {
-    "mensaje": "Bienvenido a mí microservicio Spring Boot"
+    "message": "Welcome to my Spring Boot service"
 }
 ```
 
@@ -73,6 +73,6 @@ El proyecto usa `Spring Boot Starter Web` para manejar peticiones HTTP:
 </dependency>
 ```
 
->Notas: Si el puerto 8080 está ocupado, se puede cambiar en el archivo `application.properties` agregando `server.port=9090`.
+>Notas: Si el puerto 4000 está ocupado, se puede cambiar en el archivo `application.properties` agregando `server.port=9090`.
 
 Licencia: Este proyecto es de código abierto bajo la licencia MIT.
