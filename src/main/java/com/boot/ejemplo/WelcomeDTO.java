@@ -1,9 +1,9 @@
 package com.boot.ejemplo;
 
-public class BienvenidaDTO {
+public class WelcomeDTO {
 	private String mensaje;
 
-    public BienvenidaDTO(String mensaje) {
+    public WelcomeDTO(String mensaje) {
         this.mensaje = mensaje;
     }
 
